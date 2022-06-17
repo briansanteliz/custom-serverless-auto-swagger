@@ -201,10 +201,10 @@ export default class ServerlessAutoSwagger {
     this.generateSecurity();
     this.generatePaths();
 
-    this.log.notice('Creating Swagger file...');
+    console.log('Creating Swagger file...');
 
     // TODO enable user to specify swagger file path. also needs to update the swagger json endpoint.
-    const packagePath = dirname(require.resolve('serverless-auto-swagger/package.json'));
+    const packagePath = dirname(require.resolve('custom-serverless-auto-swagger/package.json'));
     const resourcesPath = `${packagePath}/dist/resources`;
     await copy(resourcesPath, './swagger');
 
